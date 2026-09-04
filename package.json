@@ -1,0 +1,28 @@
+{
+  "name": "voice-of-customer",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "description": "Turn your Fathom sales calls into a weekly voice-of-customer report — the top objections, fears, pain points, questions, and your real ideal-client profile, ready for content.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "@supabase/supabase-js": "^2.45.4",
+    "@vercel/functions": "^3.6.2",
+    "next": "15.5.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.6.2"
+  }
+}
