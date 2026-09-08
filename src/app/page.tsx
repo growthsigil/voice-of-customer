@@ -1,5 +1,5 @@
 /**
- * Dashboard — a quick pulse: how many calls are in, how many analyzed, and a
+ * Dashboard - a quick pulse: how many calls are in, how many analyzed, and a
  * link to the latest weekly report. Server component; reads Supabase directly.
  */
 import Link from "next/link";
@@ -39,7 +39,7 @@ export default async function Home() {
         Voice of Customer
       </div>
       <h1 style={{ fontSize: 30, lineHeight: 1.1, margin: "10px 0 8px", letterSpacing: "-0.02em" }}>
-        What your prospects actually say — every week.
+        What your prospects actually say - every week.
       </h1>
       <p style={{ color: "#6b6b6b", fontSize: 15, lineHeight: 1.55, margin: "0 0 26px", maxWidth: "60ch" }}>
         Your Fathom calls flow in here, get read for objections, fears, pain points, questions and who
@@ -59,7 +59,7 @@ export default async function Home() {
           </Link>
         ) : (
           <span style={{ color: "#6b6b6b", fontSize: 14 }}>
-            No report yet — it compiles weekly (or run one now via <code>/api/compile</code>).
+            No report yet - it compiles weekly (or run one now via <code>/api/compile</code>).
           </span>
         )}
         <Link href="/reports" style={{ textDecoration: "none", background: "#fff", border: "1px solid #e6e6e6", color: "#1a1a1a", padding: "12px 18px", borderRadius: 10, fontWeight: 600, fontSize: 14 }}>

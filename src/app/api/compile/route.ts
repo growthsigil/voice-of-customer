@@ -1,5 +1,5 @@
 /**
- * Manual "compile now" — build a report on demand. Defaults to the last 7 days;
+ * Manual "compile now" - build a report on demand. Defaults to the last 7 days;
  * pass ?days=N or ?start=YYYY-MM-DD&end=YYYY-MM-DD for a custom window.
  *
  *   GET|POST /api/compile?key=<CRON_SECRET>&days=30

@@ -1,14 +1,14 @@
 -- ============================================================================
--- Voice of Customer — database schema (Supabase / Postgres)
+-- Voice of Customer - database schema (Supabase / Postgres)
 -- ----------------------------------------------------------------------------
 -- Run once in the Supabase SQL editor on a fresh project. Idempotent.
 --
 -- Tables:
---   calls          — the memory base: one row per sales call (transcript + meta)
---   call_insights  — the AI's structured read of each call (objections, fears,
+--   calls          - the memory base: one row per sales call (transcript + meta)
+--   call_insights  - the AI's structured read of each call (objections, fears,
 --                    pain points, questions, avatar signals, quotes)
---   reports        — the weekly compiled report (structured JSON + Markdown)
---   events         — a light audit log
+--   reports        - the weekly compiled report (structured JSON + Markdown)
+--   events         - a light audit log
 -- ============================================================================
 
 create extension if not exists pgcrypto with schema public;

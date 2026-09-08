@@ -144,7 +144,7 @@ export default function ReportView({ report, meta, markdown }: { report: VocRepo
         <div style={{ fontFamily: "ui-monospace, monospace", fontSize: 11.5, letterSpacing: ".12em", textTransform: "uppercase", color: "#b0561f" }}>Voice of Customer</div>
         <h1 style={{ fontSize: 30, lineHeight: 1.1, margin: "8px 0 6px", letterSpacing: "-0.02em" }}>{meta.title}</h1>
         <div style={{ color: "#8a8a8a", fontSize: 13.5 }}>
-          {fmt(meta.period_start)} – {fmt(meta.period_end)} · {meta.calls_count} call{meta.calls_count === 1 ? "" : "s"} analyzed
+          {fmt(meta.period_start)} - {fmt(meta.period_end)} · {meta.calls_count} call{meta.calls_count === 1 ? "" : "s"} analyzed
         </div>
         {report.headline && <p style={{ fontSize: 16.5, lineHeight: 1.55, color: "#2a2a2a", marginTop: 16 }}>{report.headline}</p>}
       </header>
@@ -186,7 +186,7 @@ export default function ReportView({ report, meta, markdown }: { report: VocRepo
             <div className="voc-card" style={{ background: "#fff", border: "1px solid #ececec", borderRadius: 12, padding: "14px 18px" }}>
               <div style={{ fontWeight: 600, fontSize: 13.5, marginBottom: 8 }}>Other profiles seen</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: "#4a4a4a", fontSize: 14, lineHeight: 1.6 }}>
-                {report.secondary_avatars.map((a, i) => <li key={i}><b>{a.label}</b> — {a.summary}</li>)}
+                {report.secondary_avatars.map((a, i) => <li key={i}><b>{a.label}</b> - {a.summary}</li>)}
               </ul>
             </div>
           ) : null}
@@ -195,7 +195,7 @@ export default function ReportView({ report, meta, markdown }: { report: VocRepo
 
       {report.voc_language_bank?.length ? (
         <Section title="Language bank">
-          <p style={{ margin: "-4px 0 0", color: "#8a8a8a", fontSize: 13 }}>Their exact words — steal these for hooks, headlines, and ad copy.</p>
+          <p style={{ margin: "-4px 0 0", color: "#8a8a8a", fontSize: 13 }}>Their exact words - steal these for hooks, headlines, and ad copy.</p>
           <div className="voc-card"><Chips items={report.voc_language_bank} /></div>
         </Section>
       ) : null}

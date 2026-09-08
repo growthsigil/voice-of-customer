@@ -1,5 +1,5 @@
 /**
- * Weekly compile — builds the voice-of-customer report for the trailing 7 days.
+ * Weekly compile - builds the voice-of-customer report for the trailing 7 days.
  * Scheduled by vercel.json (Mondays 08:00 UTC).
  *
  *   GET /api/cron/weekly   (Authorization: Bearer <CRON_SECRET>)

@@ -37,7 +37,7 @@ ${ctx ? `BUSINESS CONTEXT:\n${ctx}\n\n` : ""}METHOD:
 - Cluster similar items across calls (synonyms and paraphrases = the SAME theme).
 - For each theme, count how many DISTINCT calls it appears in, and rank by that count.
 - Every quote must be a real line from the notes. Never invent a number or a quote.
-- The ideal client profile is the single MOST COMMON avatar across the calls — make it vivid and specific, grounded in the notes.
+- The ideal client profile is the single MOST COMMON avatar across the calls - make it vivid and specific, grounded in the notes.
 
 Output ONLY a JSON object of exactly this shape (no prose, no markdown):
 {
@@ -80,7 +80,7 @@ export async function compileWindow(params: {
 
   const json = await generateJSON<VocReport>({ model: REPORT_MODEL, system: systemPrompt(total), user, maxTokens: 9000 });
 
-  const title = params.title || `Voice of Customer — week of ${params.periodStart}`;
+  const title = params.title || `Voice of Customer - week of ${params.periodStart}`;
   const md = reportMarkdown(json, { title, period_start: params.periodStart, period_end: params.periodEnd, calls_count: total });
 
   const report = await createReport({
@@ -96,7 +96,7 @@ export async function compileWindow(params: {
 
   await logEvent("weekly_report_ready", { report_id: report.id, calls: total });
   const link = reportUrl(report.id);
-  await sendTelegram(`📊 Voice of Customer — new weekly report (${total} call${total === 1 ? "" : "s"}).${link ? `\n${link}` : ""}`);
+  await sendTelegram(`📊 Voice of Customer - new weekly report (${total} call${total === 1 ? "" : "s"}).${link ? `\n${link}` : ""}`);
   return report;
 }
 

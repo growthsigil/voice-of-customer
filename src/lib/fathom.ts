@@ -2,7 +2,7 @@
  * Parse a Fathom webhook payload into our shape. Fathom's exact fields vary by
  * plan and by how the webhook is configured, so this reads the common field
  * names and falls back gracefully. The one thing that matters is getting the
- * transcript text out — configure the Fathom webhook to include the transcript.
+ * transcript text out - configure the Fathom webhook to include the transcript.
  */
 export interface ParsedCall {
   external_id: string | null;

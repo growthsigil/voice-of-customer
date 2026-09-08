@@ -27,7 +27,7 @@ export default async function ReportsPage() {
               <div>
                 <div style={{ fontWeight: 600, fontSize: 14.5 }}>{r.title || `Week of ${fmt(r.period_start)}`}</div>
                 <div style={{ color: "#8a8a8a", fontSize: 12.5, marginTop: 2 }}>
-                  {fmt(r.period_start)} – {fmt(r.period_end)} · {r.calls_count} call{r.calls_count === 1 ? "" : "s"}
+                  {fmt(r.period_start)} - {fmt(r.period_end)} · {r.calls_count} call{r.calls_count === 1 ? "" : "s"}
                 </div>
               </div>
               <span style={{ color: "#b0561f", fontSize: 13 }}>Open →</span>

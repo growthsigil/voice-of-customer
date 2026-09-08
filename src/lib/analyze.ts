@@ -21,12 +21,12 @@ interface Analysis {
 
 function systemPrompt(): string {
   const ctx = (process.env.VOC_BUSINESS_CONTEXT || "").slice(0, 1500);
-  return `You analyze one recorded SALES CALL and extract structured "voice of customer" intel about the PROSPECT (the potential buyer) — never about the salesperson.
+  return `You analyze one recorded SALES CALL and extract structured "voice of customer" intel about the PROSPECT (the potential buyer) - never about the salesperson.
 
 ${ctx ? `BUSINESS CONTEXT (so you understand the offer and who's selling):\n${ctx}\n\n` : ""}RULES:
 - Extract ONLY what the PROSPECT actually said or clearly implied. Ignore the rep's pitch.
-- Keep the prospect's own words in every "quote" — verbatim, trimmed to the essential line.
-- If something isn't present, use an empty array (or empty string) — never invent.
+- Keep the prospect's own words in every "quote" - verbatim, trimmed to the essential line.
+- If something isn't present, use an empty array (or empty string) - never invent.
 - "label" fields are short, canonical, reusable (e.g. "Price / can't justify cost", "Tried before and failed", "No time to implement") so similar items across calls can be grouped later.
 - questions = things the prospect asked, cleaned into a clear question.
 - avatar = who this person is, from evidence in the call only.
@@ -59,7 +59,7 @@ export async function analyzeCall(callId: string): Promise<boolean> {
   }
   try {
     const transcript = call.transcript.slice(0, MAX_TRANSCRIPT_CHARS);
-    const user = `CALL: ${call.title || "(untitled)"}${call.call_date ? ` — ${call.call_date}` : ""}\n\nTRANSCRIPT:\n${transcript}`;
+    const user = `CALL: ${call.title || "(untitled)"}${call.call_date ? ` - ${call.call_date}` : ""}\n\nTRANSCRIPT:\n${transcript}`;
     const a = await generateJSON<Analysis>({ model: ANALYSIS_MODEL, system: systemPrompt(), user, maxTokens: 3000 });
 
     await saveInsight({

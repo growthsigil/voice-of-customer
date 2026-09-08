@@ -72,7 +72,7 @@ function fmtDate(iso: string): string {
 
 function themeBlock(t: RankedTheme): string {
   const pct = t.percent != null ? ` (${t.percent}% of calls)` : "";
-  let s = `**${t.theme}** — ${t.calls} call${t.calls === 1 ? "" : "s"}${pct}\n`;
+  let s = `**${t.theme}** - ${t.calls} call${t.calls === 1 ? "" : "s"}${pct}\n`;
   if (t.what_they_mean) s += `\n${t.what_they_mean}\n`;
   for (const q of t.quotes ?? []) s += `\n> ${q}`;
   if (t.content_angle) s += `\n\n_Content angle: ${t.content_angle}_`;
@@ -82,7 +82,7 @@ function themeBlock(t: RankedTheme): string {
 export function reportMarkdown(r: VocReport, meta: ReportMeta): string {
   const lines: string[] = [];
   lines.push(`# ${meta.title}`);
-  lines.push(`_${fmtDate(meta.period_start)} – ${fmtDate(meta.period_end)} · ${meta.calls_count} call${meta.calls_count === 1 ? "" : "s"} analyzed_`);
+  lines.push(`_${fmtDate(meta.period_start)} - ${fmtDate(meta.period_end)} · ${meta.calls_count} call${meta.calls_count === 1 ? "" : "s"} analyzed_`);
   if (r.headline) lines.push(`\n${r.headline}`);
 
   const section = (title: string, themes?: RankedTheme[]) => {
@@ -98,7 +98,7 @@ export function reportMarkdown(r: VocReport, meta: ReportMeta): string {
     lines.push(`\n## Most-asked questions`);
     r.top_questions.forEach((q, i) => {
       const pct = q.percent != null ? ` (${q.percent}%)` : "";
-      lines.push(`\n**${i + 1}. ${q.question}** — ${q.calls} call${q.calls === 1 ? "" : "s"}${pct}`);
+      lines.push(`\n**${i + 1}. ${q.question}** - ${q.calls} call${q.calls === 1 ? "" : "s"}${pct}`);
       for (const ex of q.example_phrasings ?? []) lines.push(`> ${ex}`);
       if (q.content_angle) lines.push(`_Content angle: ${q.content_angle}_`);
     });
@@ -132,12 +132,12 @@ export function reportMarkdown(r: VocReport, meta: ReportMeta): string {
 
   if (r.secondary_avatars && r.secondary_avatars.length) {
     lines.push(`\n## Other profiles seen`);
-    r.secondary_avatars.forEach((a) => lines.push(`\n- **${a.label}** — ${a.summary}`));
+    r.secondary_avatars.forEach((a) => lines.push(`\n- **${a.label}** - ${a.summary}`));
   }
 
   if (r.voc_language_bank && r.voc_language_bank.length) {
     lines.push(`\n## Voice-of-customer language bank`);
-    lines.push(`_Their exact words — steal these for hooks, headlines, and ad copy._\n`);
+    lines.push(`_Their exact words - steal these for hooks, headlines, and ad copy._\n`);
     lines.push(r.voc_language_bank.map((x) => `- "${x}"`).join("\n"));
   }
 

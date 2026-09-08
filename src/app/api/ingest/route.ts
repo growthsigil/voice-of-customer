@@ -1,5 +1,5 @@
 /**
- * Manual ingest — paste or POST a transcript in. Great for backfilling old calls
+ * Manual ingest - paste or POST a transcript in. Great for backfilling old calls
  * or testing without wiring up Fathom.
  *
  *   POST /api/ingest      (Authorization: Bearer <CRON_SECRET>  or  ?key=<CRON_SECRET>)
